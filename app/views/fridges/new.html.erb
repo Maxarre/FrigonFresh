@@ -1,2 +1,13 @@
 <h1>Fridges#create</h1>
-<p>Find me in app/views/fridges/create.html.erb</p>
+
+<div class="row justify-content-center">
+  <%= simple_form_for @fridge do |f| %>
+    <%= f.input :name %>
+    <%= f.input :brand %>
+    <%= f.input :photo %>
+    <%= f.input :capacity %>
+    <%= f.input :price %>
+    <%= f.input :address %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

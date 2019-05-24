@@ -1,5 +1,6 @@
 class FridgesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new]
+
   def index
     # @fridges = Fridge.all
     @fridges = policy_scope(Fridge)

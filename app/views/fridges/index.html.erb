@@ -1,6 +1,19 @@
 <h1>Fridges#index</h1>
-<p>Find me in app/views/fridges/index.html.erb</p>
 
-<% if policy(Fridge).create? %>
-  <%= link_to "New Fridge", new_fridge_path %>
-<% end %>
+<div class="cards">
+  <% @fridges.each do |fridge| %>
+    <div class="card-fridge">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+      <div class="card-fridge-infos">
+        <div>
+          <h2><%= fridge.name %></h2>
+          <p><%= fridge.description %></p>
+          <p><%= fridge.brand %></p>
+          <p><%= fridge.address %></p>
+        </div>
+        <h2 class="card-fridge-pricing"><%= fridge.price %></h2>
+        <span><%= fridge.avatar %></span>
+      </div>
+    </div>
+  <% end %>
+</div>
