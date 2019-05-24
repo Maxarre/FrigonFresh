@@ -17,11 +17,10 @@ Rails.application.routes.draw do
   # DELETE "users/:id" to: "users#destroy"
   devise_for :users
   root to: 'pages#home'
-  resources :users, except: [:index, :show] do
-    resources :fridges do
-      resources :bookings, except: [:index, :edit, :update]
-    end
+  get 'dashboard', to: 'users#dashboard'
+  resources :bookings, only: [:edit, :update]
+  resources :fridges, only: [:index, :show, :new, :create] do
+    resources :bookings, only: [:create]
   end
-  resources :fridges, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
