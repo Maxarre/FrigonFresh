@@ -11,11 +11,13 @@ class FridgePolicy < ApplicationPolicy
 
   def update?
     if @user[:category] == "owner"
+      record.user == user
     end
   end
 
   def destroy?
     if @user[:category] == "owner"
+      record.user == user
     end
   end
 end
