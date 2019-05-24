@@ -1,4 +1,5 @@
 class FridgesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @fridges = Fridge.all
   end
@@ -17,6 +18,8 @@ class FridgesController < ApplicationController
       redirect_to fridge_path(@fridge)
     else
       render :new
+    end
+    authorize @restaurant if @user[:category] == "owner"
   end
 
   def edit
