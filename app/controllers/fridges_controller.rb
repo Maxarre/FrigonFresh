@@ -14,7 +14,7 @@ class FridgesController < ApplicationController
     @fridge = Fridge.new
   end
 
-  def create#
+  def create
     @fridge = Fridge.new(fridge_params)
     @fridge.user = current_user
     if @fridge.save
