@@ -1,6 +1,8 @@
 class FridgesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show, :new]
   def index
-    @fridges = Fridge.all
+    # @fridges = Fridge.all
+    @fridges = policy_scope(Fridge)
   end
 
   def show
@@ -17,6 +19,8 @@ class FridgesController < ApplicationController
       redirect_to fridge_path(@fridge)
     else
       render :new
+    end
+    authorize @fridge if @user[:category] == "owner"
   end
 
   def edit
