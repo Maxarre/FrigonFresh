@@ -17,16 +17,17 @@
         <h1><i class="far fa-folder-open"></i> My Bookings</h1>
       </div>
       <div class="user-booking-card">
-        <% @bookings.each do |booking, fridge| %>
-          <img src="${@fridge.photo}" alt="">
-          <span><%= fridge.user.name %></span>
-          <span><%= fridge.brand %></span>
+        <% @bookings.each do |booking| %>
+          <div class="row d-flex">
+            <img src="${@fridge.photo}" alt="">
+          <span><%= booking.fridge.user.name %></span>
+          <span><%= booking.fridge.brand %></span>
           <div class="booking-dates">
                 <p><%= booking.start_date %></p>
                 <p><%= booking.end_date %></p>
           </div>
-          <span><%= fridge.price %></span>
-          <span><%= fridge.status %></span>
+          <span><%= booking.fridge.price %></span>
+          </div>
         <% end %>
       </div>
     </div>

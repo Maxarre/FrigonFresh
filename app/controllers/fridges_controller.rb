@@ -8,6 +8,7 @@ class FridgesController < ApplicationController
 
   def show
     @fridge = Fridge.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

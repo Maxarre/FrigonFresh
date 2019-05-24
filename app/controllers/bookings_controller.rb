@@ -11,10 +11,15 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(params[:booking])
-    @booking.save
-
-    redirect_to dashboard_path
+    @fridge = Fridge.find(params[:fridge_id])
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.fridge = @fridge
+    if @booking.save
+      redirect_to dashboard_path
+    else
+      render 'fridges/show'
+    end
   end
 
   def edit
