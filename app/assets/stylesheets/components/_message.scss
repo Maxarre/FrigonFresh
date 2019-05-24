@@ -1,0 +1,19 @@
+.message {
+  display: flex;
+  align-items: flex-start;
+  img {
+  width: 40px;
+  border-radius: 4px;
+  margin-right: 16px;
+  }
+}
+
+
+.message .message-content {
+  flex-grow: 1;
+  p:first-child {
+  margin-bottom: 0;
+  margin-top: 0;
+  }
+}
+

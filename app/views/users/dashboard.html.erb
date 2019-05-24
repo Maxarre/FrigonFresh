@@ -1,2 +1,38 @@
-<h1>Users#dashboard</h1>
-<p>Find me in app/views/users/dashboard.html.erb</p>
+  <div class="d-flex dashboard-container">
+    <div class="user-sidebar">
+      <h1><%= current_user.name %></h1>
+      <div class="user-bookings">
+        <span>My settings</span>
+      </div>
+      <div class="user-fridges">
+        <span>My Bookings</span>
+      </div>
+      <div class="user-bookings">
+        <span>My Fridges</span>
+      </div>
+    </div>
+
+    <div class="user-booking-container">
+      <div class="user-booking-header">
+        <h1><i class="far fa-folder-open"></i> My Bookings</h1>
+      </div>
+      <div class="user-booking-card">
+        <% @bookings.each do |booking, fridge| %>
+          <img src="${@fridge.photo}" alt="">
+          <span><%= fridge.user.name %></span>
+          <span><%= fridge.brand %></span>
+          <div class="booking-dates">
+                <p><%= booking.start_date %></p>
+                <p><%= booking.end_date %></p>
+          </div>
+          <span><%= fridge.price %></span>
+          <span><%= fridge.status %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+    <!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
