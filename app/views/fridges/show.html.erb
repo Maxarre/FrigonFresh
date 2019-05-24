@@ -3,10 +3,7 @@
     <div class = card-main-image>plop
     </div>
     <div class="card-other-image">plop
-
     </div>
-    </class>
-
   </div>
 
   <div class="container">
@@ -16,21 +13,23 @@
         <div class="card-body">
           <h5 class="card-title"><%= @fridge.name %></h4>
           <h5 class="card-title"><%= @fridge.brand %></h5>
-              <h5 class="card-title"><%= @fridge.address %></h5>
+          <h5 class="card-title"><%= @fridge.address %></h5>
           <p class="card-text"><%= @fridge.description %></p>
         </div>
       </div>
 
       <div class="card card-show-booking">
         <div class="card-body ">
-        <h5 class="card-title">Booking</h4>
-        <h5 class="card-title"><%= @fridge.price %> €</h5>
-        <h5 class="card-title">From :<%#= @booking.start_date %></h5>
-        <h5 class="card-title">To :<%#= @booking.end_date %></h5>
-        <a href="#" class="card-link"><%= link_to "Book Now",  dashboard_path %></a>
+          <h5 class="card-title">Booking</h4>
+            <%= simple_form_for [@fridge, @booking] do |f| %>
+              <h5 class="card-title"><%= @fridge.price %> €</h5>
+              <%= f.input :start_date, as: :string %>
+              <%= f.input :end_date, as: :string %>
+              <%= f.submit class: 'btn btn-primary card-link' %>
+            <% end %>
+        </div>
       </div>
     </div>
-
   </div>
 </div>
 
