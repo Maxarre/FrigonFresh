@@ -80,3 +80,22 @@
   width: 40px;
 }
 
+.card-flexbox-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-main-image {
+  height: 20vh;
+}
+
+
+.card-show-info {
+  width: 60%;
+  margin-right: 100px;
+}
+
+.card-show-booking {
+  width: 40%;
+  margin-left: 20px;
+}
