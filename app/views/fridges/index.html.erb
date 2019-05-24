@@ -1,19 +1,19 @@
-<h1>Fridges#index</h1>
+<div class="container">
+
 
 <div class="cards">
   <% @fridges.each do |fridge| %>
-    <div class="card-fridge">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-      <div class="card-fridge-infos">
-        <div>
-          <h2><%= fridge.name %></h2>
-          <p><%= fridge.description %></p>
-          <p><%= fridge.brand %></p>
-          <p><%= fridge.address %></p>
-        </div>
-        <h2 class="card-fridge-pricing"><%= fridge.price %></h2>
-        <span><%#= fridge.avatar %></span>
+    <div class="card" style="width: 18rem;">
+    <img src="https://www.asapapplianceorlando.com/wp-content/uploads/2016/11/major-appliance-brands.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3 class="card-title"><%= fridge.name %></h3>
+        <p class="card-text"><%= fridge.address %></p>
+        <p class="card-text"><%= fridge.price %>€</p>
+        <%= link_to 'Details', fridge_path(fridge), class: "btn btn-primary" %>
       </div>
     </div>
   <% end %>
+</div>
+
+
 </div>
