@@ -1,15 +1,33 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgba(103, 143, 231, 0.65);
   border: 1px solid #555;
   margin-bottom: 30px;
+  font-family:'Pacifico';
+  color: white;
+  :hover{
+    color: white;
+  };
+  span:hover{
+    color:white;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
+
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-light .navbar-brand {
+  color: white;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: white
 }
 
