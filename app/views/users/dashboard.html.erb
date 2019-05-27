@@ -12,21 +12,20 @@
       </div>
     </div>
 
-    <div class="user-booking-container">
-      <div class="user-booking-header">
-        <h1><i class="far fa-folder-open"></i> My Bookings</h1>
-      </div>
+    <div class="user-booking-container m-3">
+      <div class="user-booking-header"><h1><i class="far fa-folder-open"></i> My Bookings</h1></div>
       <div class="user-booking-card">
         <% @bookings.each do |booking| %>
-          <div class="row d-flex">
-            <img src="${@fridge.photo}" alt="">
-          <span><%= booking.fridge.user.name %></span>
-          <span><%= booking.fridge.brand %></span>
-          <div class="booking-dates">
-                <p><%= booking.start_date %></p>
-                <p><%= booking.end_date %></p>
-          </div>
-          <span><%= booking.fridge.price %></span>
+        <div class="card-dashboard">
+            <div class="row d-flex kill-margin">
+              <img src="${@fridge.photo}" alt="" class="card-image-dashboard">
+            <div class="card-dashboard-element"> <span><%= booking.fridge.user.name %></span></div>
+            <div class="card-dashboard-element"><span><%= booking.fridge.brand %></span></div>
+            <div class="card-dashboard-element"><div class="booking-dates">
+                  <p><%= booking.start_date %></p>
+                  <p><%= booking.end_date %></p></div>
+            </div>
+            <div class="card-dashboard-element"><span><%= booking.fridge.price %> €</span></div></div>
           </div>
         <% end %>
       </div>
