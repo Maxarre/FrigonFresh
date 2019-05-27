@@ -1,16 +1,15 @@
 <body style="background-image: url(<%= image_path "lg.jpg" %>);" id="back_image">
 
-<div class="row container">
-  <div class="col-md-3"></div>
+<div class="container d-flex align-items-center" style="height: 90vh;">
 
-
-  <form class="col-md-6">
-  <h2 id="home_text">Book your Fridge!</h2>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Where</label>
-    <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">
-  </div>
+  <form>
+    <h2 id="home_text">With every occasion comes food in a Fridge.</h2>
+    <h1 id="home_text">Find the right Fridge for you now!</h1>
   <div class="row">
+    <div class="col">
+      <label id="home_text" for="exampleInputEmail1">Where</label>
+      <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">
+    </div>
     <div class="col">
       <label id="home_text" for="">Start Date</label>
       <input type="text" class="form-control" placeholder="DD/MM/YYYY">
@@ -19,12 +18,12 @@
       <label id="home_text" for="">End Date</label>
       <input type="text" class="form-control" placeholder="DD/MM/YYYY">
     </div>
+    <div class="col">
+      <label id="btn_text" for="">Searchcccccccccccc</label>
+      <%= link_to "Find a Fridge", fridges_path, class: "btn btn-primary", id: "home-btn" %>
+    </div>
   </div>
-  <div class="form-group">
-    <label id="home_text" for="exampleInputEmail1">Fridge Capacity</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="How many Liters?">
-  </div>
-  <%= link_to "Search", fridges_path, class: "btn btn-primary" %>
+  <%= link_to "+ more Options", fridges_path, class: "btn btn-primary", id: "more_options"%>
 </form>
 
 
