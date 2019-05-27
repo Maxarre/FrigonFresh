@@ -3,27 +3,36 @@
   <div class="container">
 
     <div class="card-flexbox-space-between">
-      <div class="card card-show-info">
-        <img id="frigo_s" src="<%= @fridge.photo %>" alt="...">
+      <div class="card-show">
+        <div class="card-body card-head"><h3><%= @fridge.name %></h3></div>
+
+        <div class="d-flex">
+        <img id="show-resize-image" src="<%= @fridge.photo %>" alt="...">
+          <div class="card-body card-show-information">
+            <h4 class="card-title">Information</h4>
+            <h5>Brand : <%= @fridge.brand %></h5>
+            <h5>Capactity : <%=@fridge.capacity%> L</h5>
+            <h5>Address : <%= @fridge.address %></h5>
+          </div>
+        </div>
+
         <div class="card-body">
-          <h5 class="card-title"><%= @fridge.name %></h4>
-          <h5 class="card-title"><%= @fridge.brand %></h5>
-          <h5 class="card-title"><%= @fridge.address %></h5>
+          <h4 class="card-title">Description</h4>
           <p class="card-text"><%= @fridge.description %></p>
         </div>
       </div>
 
-      <div class="card card-show-booking">
-        <div class="card-body ">
-          <h5 class="card-title">Booking</h4>
+
+        <div class="card-body card-show-booking ">
+          <h5 class="card-title">Book this fridge</h4>
             <%= simple_form_for [@fridge, @booking] do |f| %>
-              <h5 class="card-title"><%= @fridge.price %> €</h5>
               <%= f.input :start_date, as: :string %>
               <%= f.input :end_date, as: :string %>
+              <h5><%= @fridge.price %> €/days</h5>
               <%= f.submit class: 'btn btn-primary card-link' %>
             <% end %>
         </div>
-      </div>
+
     </div>
   </div>
 </div>
