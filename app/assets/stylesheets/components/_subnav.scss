@@ -1,0 +1,29 @@
+.fa-chevron-down {
+  color: rgba(0, 0, 0, 0.3)
+}
+
+.fa-map-marker-alt {
+  color: #e00034
+}
+
+.far {
+  color: #e00034
+}
+
+.subnav-lewagon {
+  justify-content: space-between;
+  background: rgb(103, 143, 231);
+  border: 1px solid #555;
+  margin-bottom: 30px;
+  color: white;
+  font-family: 'Pacifico';
+}
+
+.subnav-lewagon .subnav-collapse {
+  flex-grow: 0;
+}
+
+.subnav-lewagon .subnav-brand img {
+  width: 40px;
+}
+
