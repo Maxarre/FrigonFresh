@@ -94,14 +94,34 @@
   height: 20vh;
 }
 
-.card-show-info {
-  width: 60%;
+.card-show {
+  width: 70%;
   margin-right: 100px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
 }
 
+.card-head {
+ padding-bottom: 0px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-show-information {
+  margin-top: 40px;
+}
 .card-show-booking {
   width: 40%;
   margin-left: 20px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+  background-color: white;
+  height: 320px;
+  border-radius: 5px;
+
+
 }
 
 .card-dashboard {
@@ -142,4 +162,10 @@
   height: 360px;
   width: auto;
   object-fit: scale-down;
+}
+
+#show-resize-image {
+  height: 300px;
+  object-fit: scale-down;
+
 }
