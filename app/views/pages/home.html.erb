@@ -1,26 +1,27 @@
 <body style="background-image: url(<%= image_path "lg.jpg" %>);" id="back_image">
 
-<div class="container">
+<div class="row container">
+  <div class="col-md-3"></div>
 
 
-  <form>
-  <h2>Book your Fridge!</h2>
+  <form class="col-md-6">
+  <h2 id="home_text">Book your Fridge!</h2>
   <div class="form-group">
     <label for="exampleInputEmail1">Where</label>
     <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">
   </div>
   <div class="row">
     <div class="col">
-      <label for="">Start Date</label>
+      <label id="home_text" for="">Start Date</label>
       <input type="text" class="form-control" placeholder="DD/MM/YYYY">
     </div>
     <div class="col">
-      <label for="">End Date</label>
+      <label id="home_text" for="">End Date</label>
       <input type="text" class="form-control" placeholder="DD/MM/YYYY">
     </div>
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Fridge Capacity</label>
+    <label id="home_text" for="exampleInputEmail1">Fridge Capacity</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="How many Liters?">
   </div>
   <%= link_to "Search", fridges_path, class: "btn btn-primary" %>
