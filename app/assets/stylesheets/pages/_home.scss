@@ -8,9 +8,17 @@
 form {
   border-radius: 5px;
   padding: 5px;
-  background-color: white;
 }
 
 #home_text {
-  color: black;
+  color: white;
+}
+
+#btn_text {
+  color: white;
+  opacity: 0;
+}
+
+.form-control {
+  border-radius: 5px;
 }
