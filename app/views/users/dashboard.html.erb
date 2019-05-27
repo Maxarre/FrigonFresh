@@ -1,38 +1,25 @@
-  <div class="d-flex dashboard-container">
-    <div class="user-sidebar">
-      <h1><%= current_user.name %></h1>
-      <div class="user-bookings">
-        <span>My settings</span>
-      </div>
-      <div class="user-fridges">
-        <span>My Bookings</span>
-      </div>
-      <div class="user-bookings">
-        <span>My Fridges</span>
-      </div>
-    </div>
-
-    <div class="user-booking-container m-3">
-      <div class="user-booking-header"><h1><i class="far fa-folder-open"></i> My Bookings</h1></div>
-      <div class="user-booking-card">
-        <% @bookings.each do |booking| %>
-        <div class="card-dashboard">
-            <div class="row d-flex kill-margin">
-              <img src="<%= booking.fridge.photo %>" alt="" class="card-image-dashboard">
-            <div class="card-dashboard-element"> <span><%= booking.fridge.user.name %></span></div>
-            <div class="card-dashboard-element"><span><%= booking.fridge.brand %></span></div>
-            <div class="card-dashboard-element"><div class="booking-dates">
-                  <p><%= booking.start_date %></p>
-                  <p><%= booking.end_date %></p></div>
-            </div>
-            <div class="card-dashboard-element"><span><%= booking.fridge.price %> €</span></div></div>
+<div class="d-flex dashboard-container">
+  <div class="user-booking-container m-5 to_the_left">
+    <div class="user-booking-header"><h1><i class="far fa-folder-open"></i> My Bookings</h1></div>
+    <div class="user-booking-card">
+      <% @bookings.each do |booking| %>
+      <div class="card-dashboard">
+          <div class="row d-flex kill-margin">
+            <img src="<%= booking.fridge.photo %>" alt="" class="card-image-dashboard">
+          <div class="card-dashboard-element"> <span><%= booking.fridge.user.name %></span></div>
+          <div class="card-dashboard-element"><span><%= booking.fridge.brand %></span></div>
+          <div class="card-dashboard-element"><div class="booking-dates">
+                <p><%= booking.start_date %></p>
+                <p><%= booking.end_date %></p></div>
           </div>
-        <% end %>
-      </div>
+          <div class="card-dashboard-element price"><span><%= booking.fridge.price %> €</span></div></div>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>
 
-    <!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
