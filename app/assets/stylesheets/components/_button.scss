@@ -1,3 +1,17 @@
+.button-booking {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  background-color: #678FE7;
+  color: white;
+  border-radius: 20px;
+  width: 100%;
+  padding:8px;
+}
+
+.button-booking:hover {
+  opacity: 0.7;
+}
+
 #home-btn {
   border-radius: 25px;
 }

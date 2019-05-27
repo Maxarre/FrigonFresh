@@ -28,8 +28,9 @@
             <%= simple_form_for [@fridge, @booking] do |f| %>
               <%= f.input :start_date, as: :string %>
               <%= f.input :end_date, as: :string %>
-              <h5><%= @fridge.price %> €/days</h5>
-              <%= f.submit class: 'btn btn-primary card-link' %>
+              <h5>Price : <%= @fridge.price %> €/days</h5>
+              <br>
+              <%= f.submit class: 'btn button-booking card-link' %>
             <% end %>
         </div>
 

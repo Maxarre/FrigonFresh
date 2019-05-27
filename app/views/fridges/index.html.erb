@@ -4,9 +4,10 @@
 <div class="cards">
   <% @fridges.each do |fridge| %>
     <div class="card" style="width: 18rem;">
-    <img id="frigo_s" src="<%= fridge.photo %>" alt="...">
+      <p class = "index-fridge-brand"><%= fridge.brand %></p>
+      <img id="frigo_s" src="<%= fridge.photo %>" alt="...">
       <div class="card-body">
-        <h3 class="card-title"><%= fridge.name %></h3>
+        <h4 class="card-title card-title-index"><%= fridge.name %></h4>
         <p class="card-text"><%= fridge.address %></p>
         <p class="card-text"><%= fridge.price %>€</p>
         <%= link_to 'Details', fridge_path(fridge), class: "btn btn-primary" %>
