@@ -4,7 +4,7 @@
 <div class="cards">
   <% @fridges.each do |fridge| %>
     <div class="card" style="width: 18rem;">
-    <img src="<%= fridge.photo %>" alt="...">
+    <img id="frigo_s" src="<%= fridge.photo %>" alt="...">
       <div class="card-body">
         <h3 class="card-title"><%= fridge.name %></h3>
         <p class="card-text"><%= fridge.address %></p>
