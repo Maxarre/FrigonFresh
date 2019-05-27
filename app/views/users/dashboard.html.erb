@@ -18,7 +18,7 @@
         <% @bookings.each do |booking| %>
         <div class="card-dashboard">
             <div class="row d-flex kill-margin">
-              <img src="${@fridge.photo}" alt="" class="card-image-dashboard">
+              <img src="<%= booking.fridge.photo %>" alt="" class="card-image-dashboard">
             <div class="card-dashboard-element"> <span><%= booking.fridge.user.name %></span></div>
             <div class="card-dashboard-element"><span><%= booking.fridge.brand %></span></div>
             <div class="card-dashboard-element"><div class="booking-dates">
