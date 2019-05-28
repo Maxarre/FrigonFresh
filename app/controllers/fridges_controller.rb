@@ -10,6 +10,16 @@ class FridgesController < ApplicationController
     else
       @fridges = Fridge.all
     end
+    @maps = Fridge.where.not(latitude: nil, longitude: nil)
+
+    @markers = @maps.map do |fridge|
+      {
+        lat: fridge.latitude,
+        lng: fridge.longitude,
+        infoWindow: render_to_string(partial: "shared/infowindow", locals: { fridge: fridge })
+
+      }
+    end
   end
 
   def show
@@ -60,6 +70,7 @@ class FridgesController < ApplicationController
       }
     end
   end
+
 
   private
 
