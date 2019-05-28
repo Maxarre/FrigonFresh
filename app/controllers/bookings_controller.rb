@@ -6,15 +6,16 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def new
-    @booking = Booking.new
-  end
+  # def new
+  #   @booking = Booking.new
+  # end
 
   def create
     @fridge = Fridge.find(params[:fridge_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.fridge = @fridge
+    @booking.status = 'pending'
     if @booking.save
       redirect_to dashboard_path
     else
