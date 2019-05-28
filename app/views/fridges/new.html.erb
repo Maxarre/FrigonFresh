@@ -17,7 +17,7 @@
         <img width="300" class="hidden" id="photo-preview" src="">
         <%= image_tag "", height: 360, width: 286, crop: :fill, class: "hidden photo-place", id: "photo-preview" %>
       </div>
-      <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo button-booking-picture'}, label: '📷 Upload a photo' %>
+      <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo button-booking-picture'}, label: '📷 Upload a picture' %>
       <%= f.input :photo_cache, as: :hidden %>
     </div>
     <% end %>
