@@ -1,9 +1,6 @@
 // Specific CSS for your home-page
 
 
-#back_image {
-  background-size: fill;
-}
 
 form {
   border-radius: 5px;
@@ -26,4 +23,12 @@ form {
 
 .form-control {
   border-radius: 5px;
+}
+
+#search_form {
+  max-width: 440px;
+}
+
+#back_image {
+  background-size: cover;
 }
