@@ -10,4 +10,5 @@ class Fridge < ApplicationRecord
   validates :photo, presence: true
   validates :capacity, presence: true
   validates :price, presence: true
+  mount_uploader :photo, PhotoUploader
 end
