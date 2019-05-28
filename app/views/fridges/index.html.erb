@@ -27,7 +27,8 @@
     </li>
   </ul>
 </div>
-<div class="container">
+
+<div class="d-flex justify-content-center align-items-start">
 
 <div class="cards">
   <% @fridges.each do |fridge| %>
@@ -44,5 +45,10 @@
   <% end %>
 </div>
 
+<div
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
 </div>
