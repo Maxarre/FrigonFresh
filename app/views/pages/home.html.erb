@@ -8,24 +8,24 @@
   <div class="row">
     <div class="col">
       <label id="home_text" for="exampleInputEmail1">Where</label>
-      <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">
-    </div>
-    <div class="col">
-      <label id="home_text" for="">Start Date</label>
-      <input type="text" class="form-control" placeholder="DD/MM/YYYY">
-    </div>
-    <div class="col">
-      <label id="home_text" for="">End Date</label>
-      <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+      <%= form_tag fridges_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Address"
+        %>
+        <button class="btn btn-primary" type="submit">Find a Fridge</button>
+      <% end %>
     </div>
     <div class="col">
       <label id="btn_text" for="">Searchcccccccccccc</label>
       <%= link_to "Find a Fridge", fridges_path, class: "btn btn-primary", id: "home-btn" %>
     </div>
   </div>
-  <%= link_to "+ more Options", fridges_path, class: "btn btn-primary", id: "more_options"%>
 </form>
+<%= link_to "+ more Options", fridges_path, class: "btn btn-primary", id: "more_options"%>
 
 
 </div>
+
 </body>

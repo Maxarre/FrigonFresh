@@ -29,6 +29,15 @@
 </div>
 <div class="container">
 
+  <%= form_tag fridges_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a fridge"
+  %>
+  <button class="btn btn-primary" type="submit">Find a Fridge</button>
+<% end %>
+
 <div class="cards">
   <% @fridges.each do |fridge| %>
     <div class="card" style="width: 18rem;">
