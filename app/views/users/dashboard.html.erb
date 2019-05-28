@@ -7,12 +7,14 @@
       <div class="card-dashboard">
         <div class="row d-flex kill-margin">
           <img src="<%= booking.fridge.photo %>" alt="" class="card-image-dashboard">
-          <div class="card-dashboard-element"> <span><%= booking.fridge.user.name %></span></div>
+          <div class="card-dashboard-element"> <span><%= booking.fridge.name %></span></div>
           <div class="card-dashboard-element"><span><%= booking.fridge.brand %></span></div>
           <div class="card-dashboard-element"><div class="booking-dates">
                 <p><%= booking.start_date %></p>
                 <p><%= booking.end_date %></p></div></div>
           <div class="card-dashboard-element price"><span><%= booking.fridge.price %> €</span
+            ></div>
+          <div class="card-dashboard-element price"><span><%= booking.status %></span
             ></div>
           <div class="card-dashboard-element icone">
             <%= link_to fridge_booking_path(booking.fridge, booking), method: :delete, id: "danger", data: { confirm: "Are you sure?" } do %>
@@ -22,6 +24,32 @@
       </div>
       <% end %>
     </div>
+
+    <div class="user-booking-header"><h1>
+      <i class="far fa-folder-open"></i> My Reservations</h1>
+    </div>
+    <div class="user-booking-card">
+      <% @reservations.each do |reservation| %>
+        <div class="card-dashboard">
+          <div class="row d-flex kill-margin">
+            <img src="<%= reservation.fridge.photo %>" alt="" class="card-image-dashboard">
+            <div class="card-dashboard-element"> <span><%= reservation.user.name %></span></div>
+            <div class="card-dashboard-element"><span><%= reservation.fridge.brand %></span></div>
+            <div class="card-dashboard-element"><div class="booking-dates">
+                  <p><%= reservation.start_date %></p>
+                  <p><%= reservation.end_date %></p></div></div>
+            <div class="card-dashboard-element price"><span><%= reservation.fridge.price %> €</span
+              ></div>
+            <div class="card-dashboard-element actions">
+              <ul class="list-inline">
+                <li id="reservation-status-accept">Accept</li>
+                <li id="reservation-status-decline">Decline</li>
+              </ul>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
   </div>
 </div>
 
@@ -31,6 +59,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
+<script>
+  const reservationStatusAccept = document.getElementById("reservation-status-accept");
+reservationStatusAccept.addEventListener("click", (event) => {
+  event.currentTarget.parentNode.innerHTML = "Accepted <i class='fas fa-check'></i>"
+});
+
+const reservationStatusDecline = document.getElementById("reservation-status-decline");
+reservationStatusDecline.addEventListener("click", (event) => {
+  event.currentTarget.parentNode.innerHTML = "Declined <i class='fas fa-times'></i>"
+});
+
+
+</script>
 
 
 

@@ -28,16 +28,20 @@
   </ul>
 </div>
 
-<div class="d-flex justify-content-center align-items-start">
-
-  <%= form_tag fridges_path, method: :get do %>
+<div class="row">
+  <div class="col">
+  <%= form_tag fridges_path, id: "search_form", method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Find a fridge"
+    placeholder: "name, address, brand"
   %>
-  <button class="btn btn-primary" type="submit">Find a Fridge</button>
-<% end %>
+  <button id="home-btn" class="btn btn-primary" type="submit">Find a Fridge</button>
+  <% end %>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center align-items-start">
 
 <div class="cards">
   <% @fridges.each do |fridge| %>

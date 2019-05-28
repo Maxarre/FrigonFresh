@@ -1,9 +1,6 @@
 // Specific CSS for your home-page
 
 
-#back_image {
-  background-size: fill;
-}
 
 form {
   border-radius: 5px;
@@ -14,11 +11,19 @@ form {
   color: white;
 }
 
-#btn_text {
+#home_text_t {
   color: white;
-  opacity: 0;
+  text-shadow: 2px 2px black;
 }
 
 .form-control {
   border-radius: 5px;
+}
+
+#search_form {
+  max-width: 440px;
+}
+
+#back_image {
+  background-size: cover;
 }
