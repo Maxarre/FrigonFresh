@@ -1,3 +1,7 @@
+.hidden {
+  opacity: 0;
+}
+
 .button-booking {
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
@@ -11,6 +15,21 @@
 .button-booking:hover {
   opacity: 0.7;
 }
+
+.button-booking-picture {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  width: 180px;
+  padding: 4px;
+  margin-top: 15px;
+  position: relative;
+  left: 60px;
+}
+
+.button-booking-picture:hover {
+  opacity: 0.7;
+}
+
 
 #home-btn {
   border-radius: 25px;

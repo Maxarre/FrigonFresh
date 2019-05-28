@@ -7,5 +7,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 //comment
 initMapbox();
 import "../plugins/flatpickr"
-// resa
-import "../plugins/owner_reservation"
+
+import { previewImageOnFileSelect } from "../components/photo_preview";
+previewImageOnFileSelect();
