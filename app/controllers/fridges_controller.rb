@@ -2,9 +2,14 @@ class FridgesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new]
 
   def index
-    @fridges = Fridge.all
+    # @fridges = Fridge.all
     # @fridges = policy_scope(Fridge)
-    map
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query"
+      @fridges = Fridge.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @fridges = Fridge.all
+    end
   end
 
   def show
