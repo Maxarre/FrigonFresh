@@ -8,7 +8,7 @@
       <h2 id="home_text_t">With every occasion comes food in a Fridge.</h2>
       <h1 id="home_text_t">Find the right Fridge for you now!</h1>
       <label id="home_text" for="exampleInputEmail1">Where</label>
-      <%= form_tag fridges_path, method: :get do %>
+      <%= form_tag fridges_path, id: "search_form", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
