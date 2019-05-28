@@ -28,8 +28,7 @@
   </ul>
 </div>
 
-<div class="d-flex justify-content-center align-items-start">
-
+<div>
   <%= form_tag fridges_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -38,6 +37,9 @@
   %>
   <button class="btn btn-primary" type="submit">Find a Fridge</button>
 <% end %>
+</div>
+
+<div class="d-flex justify-content-center align-items-start">
 
 <div class="cards">
   <% @fridges.each do |fridge| %>
