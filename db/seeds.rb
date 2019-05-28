@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+u = User.create(name:'toto', email:'toto@gmail.com', category:'owner', password:'tototo')
+
 Fridge.create!(name: 'Bosch Serie 4 KDV29VL30', address: '1 rue Crespin du Gast', brand: 'Bosch',
   photo: "https://static.fnac-static.com/multimedia/Images/FR/MC/4e/75/2b/19625294/1507-1/tsp20170925083012/Bosch-Serie-4-KDV29VL30-refrigerateur-congelateur-congelateur-haut-pose-libre-aspect-inox.jpg#2563251e-e9b7-4168-8737-45d026eb6498",
   capacity: '194', price: '514', user_id: 1,
