@@ -2,7 +2,7 @@
 
 <div class="container d-flex align-items-center" style="height: 90vh;">
 
-  <form>
+
     <h2 id="home_text">With every occasion comes food in a Fridge.</h2>
     <h1 id="home_text">Find the right Fridge for you now!</h1>
   <div class="row">
@@ -14,15 +14,10 @@
           class: "form-control",
           placeholder: "Address"
         %>
-        <button class="btn btn-primary" type="submit">Find a Fridge</button>
+        <button id="home-btn" class="btn btn-primary" type="submit">Find a Fridge</button>
       <% end %>
     </div>
-    <div class="col">
-      <label id="btn_text" for="">Searchcccccccccccc</label>
-      <%= link_to "Find a Fridge", fridges_path, class: "btn btn-primary", id: "home-btn" %>
-    </div>
   </div>
-</form>
 <%= link_to "+ more Options", fridges_path, class: "btn btn-primary", id: "more_options"%>
 
 
