@@ -5,7 +5,7 @@ class FridgesController < ApplicationController
     # @fridges = Fridge.all
     # @fridges = policy_scope(Fridge)
     if params[:query].present?
-      sql_query = "name ILIKE :query OR address ILIKE :query"
+      sql_query = "name ILIKE :query OR address ILIKE :query OR brand ILIKE :query"
       @fridges = Fridge.where(sql_query, query: "%#{params[:query]}%")
     else
       @fridges = Fridge.all

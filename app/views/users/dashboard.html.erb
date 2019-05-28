@@ -14,6 +14,8 @@
                 <p><%= booking.end_date %></p></div></div>
           <div class="card-dashboard-element price"><span><%= booking.fridge.price %> €</span
             ></div>
+          <div class="card-dashboard-element price"><span><%= booking.status %></span
+            ></div>
           <div class="card-dashboard-element icone">
             <%= link_to fridge_booking_path(booking.fridge, booking), method: :delete, id: "danger", data: { confirm: "Are you sure?" } do %>
             <i class ="fas fa-times"></i><% end %>
