@@ -72,9 +72,9 @@
             </div>
             <div class="card-dashboard-element actions">
               <% if booking.status == "pending"  %>
-                <%= link_to "Accept", accept_path(booking), method: :post, class: "btn button-booking"%>
+                <%= link_to "Accept ", accept_path(booking), method: :post, class: "main-button bigger-button"%>
                 <br><br>
-                <%= link_to "Decline", decline_path(booking), method: :post, class: "btn button-booking"%>
+                <%= link_to "Decline", decline_path(booking), method: :post, class: "main-button bigger-button"%>
               <% end %>
             </div>
           </div>
