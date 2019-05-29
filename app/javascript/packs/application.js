@@ -1,4 +1,5 @@
 import "bootstrap";
+import "animate.css";
 
 // CSS
 import 'mapbox-gl/dist/mapbox-gl.css';
