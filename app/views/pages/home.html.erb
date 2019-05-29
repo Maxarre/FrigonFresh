@@ -3,18 +3,17 @@
 <div class="container d-flex align-items-center" style="height: 90vh;">
 
 
-  <div class="row">
+  <div class="row form-inline">
     <div class="col">
       <h2 id="home_text_t">With every occasion comes food in a Fridge.</h2>
       <h1 id="home_text_t">Find the right Fridge for you now!</h1>
-      <label id="home_text" for="exampleInputEmail1">Where</label>
       <%= form_tag fridges_path, id: "search_form", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Address"
         %>
-        <button id="home-btn" class="btn btn-primary" type="submit">Find a Fridge</button>
+        <button class="btn btn-primary" style="border-radius: 25px; " type="submit">Find a Fridge</button>
       <% end %>
       <%= link_to "+ more Options", fridges_path, class: "btn btn-primary", id: "more_options"%>
     </div>

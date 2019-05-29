@@ -9,6 +9,7 @@
 .card {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
+  margin: auto;
 }
 
 // Smallest device
@@ -50,9 +51,9 @@
 // SCSS pour les cartes
 
 .card-fridge {
+  flex-grow: 1;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   img {
   height: 200px;
   width: 100%;
@@ -73,7 +74,7 @@
 .card-fridge .card-fridge-infos {
   padding: 16px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-end;
   position: relative;
 }
@@ -195,7 +196,7 @@
 
 .import-a-picture {
   padding: 20px;
-  border: -200px;
   height: 450px;
   margin-top: 20px;
+  width: 350;
 }

@@ -13,10 +13,8 @@
       <%= f.button :submit, "Add you're fridge", :class => 'button-booking' %>
     </div>
     <div class="card import-a-picture">
-      <div id="add-photo">
-        <img width="300" class="hidden" id="photo-preview" src="">
-        <%= image_tag "", height: 360, width: 286, crop: :fill, class: "hidden photo-place", id: "photo-preview" %>
-      </div>
+      <img width="300" class="hidden" id="photo-preview" src="">
+      <%= image_tag "", height: 360, width: 286, crop: :fill, class: "hidden photo-place", id: "photo-preview" %>
       <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo button-booking-picture'}, label: '📷 Upload a picture' %>
       <%= f.input :photo_cache, as: :hidden %>
     </div>

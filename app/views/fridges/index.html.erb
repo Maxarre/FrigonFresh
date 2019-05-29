@@ -1,5 +1,15 @@
 <div class="subnav">
   <ul class="list-inline d-flex justify-content-center align-items-center">
+    <div class="row">
+      <div class="form-inline" style="padding-left: 40px;">
+        <div class="col">
+          <%= form_tag fridges_path, id: "search_form", method: :get do %>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "name, address, brand" %>
+          <button class="button-looking" type="submit">Find a Fridge</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
     <li class="element">
     <i class="fas fa-map-marker-alt"></i>
     <span>LOCATION</span>
@@ -28,27 +38,11 @@
   </ul>
 </div>
 
-<div class="row">
-  <div class="col">
-  <%= form_tag fridges_path, id: "search_form", method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "name, address, brand"
-  %>
-  <button id="home-btn" class="btn btn-primary" type="submit">Find a Fridge</button>
-  <% end %>
-  </div>
-</div>
-
-<div class="d-flex justify-content-center align-items-start">
-
-<div class="cards">
+<div class="d-flex justify-content-between" style="padding-top: 1 0px;">
+<div class="cards card-fridge">
   <% @fridges.each do |fridge| %>
     <div class="card" style="width: 18rem;">
       <p class = "index-fridge-brand"><%= fridge.brand %></p>
-
-      <!-- <img id="frigo_s" src="<%= fridge.photo %>" alt="..."> -->
       <%= cl_image_tag fridge.photo.url, id: "frigo_s", height: 300, width: 300, crop: :fill %>
       <div class="card-body">
         <h4 class="card-title card-title-index"><%= fridge.name %></h4>
@@ -59,7 +53,6 @@
     </div>
   <% end %>
 </div>
-
 <div
   id="map"
   data-markers="<%= @markers.to_json %>"
