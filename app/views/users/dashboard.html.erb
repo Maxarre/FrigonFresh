@@ -24,6 +24,10 @@
               <span><%= booking.fridge.price %> €</span
               >
             </div>
+            <div class="card-dashboard-element user-name">
+              <h5>Owner</h5>
+              <span><%= booking.user.name %></span>
+            </div>
             <div class="card-dashboard-element statut">
               <h5>Statut</h5>
               <span><%= booking.status %></span>
@@ -63,8 +67,8 @@
               >
             </div>
             <div class="card-dashboard-element user-name">
-              <h5>Owner</h5>
-              <span><%= booking.user.name %></span>
+              <h5>Status</h5>
+              <span><%= booking.status %></span>
             </div>
             <div class="card-dashboard-element actions">
               <% if booking.status == "pending"  %>
