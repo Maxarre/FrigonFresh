@@ -44,12 +44,24 @@
       </div>
       <div class="user-booking-card">
         <% @reservations.each do |booking| %>
-          <div>
+        <div class="card-dashboard">
+          <div class="row d-flex kill-margin">
+            <img src="<%= booking.fridge.photo %>" alt="" class="card-image-dashboard">
+            <div class="card-dashboard-element"> <span><%= booking.user.name %></span></div>
+            <div class="card-dashboard-element"><span><%= booking.fridge.brand %></span></div>
+            <div class="card-dashboard-element"><div class="booking-dates">
+                  <p><%= booking.start_date %></p>
+                  <p><%= booking.end_date %></p></div></div>
+            <div class="card-dashboard-element price"><span><%= booking.fridge.price %> €</span
+              ></div>
+          <div class="card-dashboard-element actions">
             <% if booking.status == "pending"  %>
               <%= link_to "Accept", accept_path(booking), method: :post, class: "btn btn-flat main-btn", style: "background-color: grey; width: 30%;" %>
               <%= link_to "Decline", decline_path(booking), method: :post, class: "btn btn-flat main-btn", style: "background-color: grey; width: 30%;" %>
             <% end %>
           </div>
+        </div>
+      </div>
         <% end %>
       </div>
     <% end %>
