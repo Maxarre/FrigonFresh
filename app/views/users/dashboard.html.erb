@@ -21,7 +21,7 @@
             </div>
             <div class="card-dashboard-element price">
               <h5>Price</h5>
-              <span><%= booking.fridge.price %> €</span
+              <span><%= ((booking.end_date - booking.start_date) * booking.fridge.price).to_i %> €</span
               >
             </div>
             <div class="card-dashboard-element user-name">
