@@ -9,23 +9,23 @@
         <div class="card-dashboard">
           <div class="row d-flex kill-margin">
             <img src="<%= booking.fridge.photo %>" alt="" class="card-image-dashboard">
-            <div class="card-dashboard-element">
-              <span><%= booking.fridge.name %></span>
+            <div class="card-dashboard-element name-brand">
+              <span><strong>Model</strong> : <%= booking.fridge.name %></span>
+              <br><br>
+              <span><strong>Brand</strong> : <%= booking.fridge.brand %></span>
             </div>
-            <div class="card-dashboard-element">
-              <span><%= booking.fridge.brand %></span>
-            </div>
-            <div class="card-dashboard-element">
-              <div class="booking-dates">
-                <p><%= booking.start_date %></p>
-                <p><%= booking.end_date %></p>
-              </div>
+            <div class="card-dashboard-element date">
+              <h5>Booking</h5>
+              <p>From : <%= booking.start_date %></p>
+              <p>To : <%= booking.end_date %></p>
             </div>
             <div class="card-dashboard-element price">
+              <h5>Price</h5>
               <span><%= booking.fridge.price %> €</span
               >
             </div>
-            <div class="card-dashboard-element price">
+            <div class="card-dashboard-element statut">
+              <h5>Statut</h5>
               <span><%= booking.status %></span>
             </div>
             <div class="card-dashboard-element icone">
@@ -47,21 +47,34 @@
         <div class="card-dashboard">
           <div class="row d-flex kill-margin">
             <img src="<%= booking.fridge.photo %>" alt="" class="card-image-dashboard">
-            <div class="card-dashboard-element"> <span><%= booking.user.name %></span></div>
-            <div class="card-dashboard-element"><span><%= booking.fridge.brand %></span></div>
-            <div class="card-dashboard-element"><div class="booking-dates">
-                  <p><%= booking.start_date %></p>
-                  <p><%= booking.end_date %></p></div></div>
-            <div class="card-dashboard-element price"><span><%= booking.fridge.price %> €</span
-              ></div>
-          <div class="card-dashboard-element actions">
-            <% if booking.status == "pending"  %>
-              <%= link_to "Accept", accept_path(booking), method: :post, class: "btn btn-flat main-btn", style: "background-color: grey; width: 30%;" %>
-              <%= link_to "Decline", decline_path(booking), method: :post, class: "btn btn-flat main-btn", style: "background-color: grey; width: 30%;" %>
-            <% end %>
+          <div class="card-dashboard-element name-brand">
+              <span><strong>Model</strong> : <%= booking.fridge.name %></span>
+              <br><br>
+              <span><strong>Brand</strong> : <%= booking.fridge.brand %></span>
+            </div>
+            <div class="card-dashboard-element date">
+              <h5>Booking</h5>
+              <p>From : <%= booking.start_date %></p>
+              <p>To : <%= booking.end_date %></p>
+            </div>
+            <div class="card-dashboard-element price">
+              <h5>Price</h5>
+              <span><%= booking.fridge.price %> €</span
+              >
+            </div>
+            <div class="card-dashboard-element user-name">
+              <h5>Owner</h5>
+              <span><%= booking.user.name %></span>
+            </div>
+            <div class="card-dashboard-element actions">
+              <% if booking.status == "pending"  %>
+                <%= link_to "Accept", accept_path(booking), method: :post, class: "btn button-booking"%>
+                <br><br>
+                <%= link_to "Decline", decline_path(booking), method: :post, class: "btn button-booking"%>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
         <% end %>
       </div>
     <% end %>
