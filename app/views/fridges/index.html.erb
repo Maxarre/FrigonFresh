@@ -1,16 +1,16 @@
 <div class="subnav">
-  <ul class="list-inline d-flex justify-content-center align-items-center">
-    <div class="row">
-      <div class="form-inline" style="padding-left: 40px;">
-        <div class="col">
-          <%= form_tag fridges_path, id: "search_form", method: :get do %>
-          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "name, address, brand" %>
-          <button class="main-button bigger-button" type="submit">Find a Fridge</button>
-          <% end %>
-        </div>
-      </div>
+
+
+  <div class="form-inline" style="padding: 20px;">
+    <div class="col">
+      <%= form_tag fridges_path, id: "search_form", method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "name, address, brand" %>
+      <button class="main-button bigger-button" type="submit">Find a Fridge</button>
+      <% end %>
     </div>
-  </ul>
+  </div>
+
+
 </div>
 
 <div class="d-flex justify-content-between" style="padding-top: 1 0px;">
