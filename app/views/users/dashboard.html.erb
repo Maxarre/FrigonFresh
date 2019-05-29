@@ -54,6 +54,7 @@
                   <p><%= booking.end_date %></p></div></div>
             <div class="card-dashboard-element price"><span><%= booking.fridge.price %> €</span
               ></div>
+            <div class="card-dashboard-element"><span><%= booking.status %></span></div>
           <div class="card-dashboard-element actions">
             <% if booking.status == "pending"  %>
               <%= link_to "Accept", accept_path(booking), method: :post, class: "btn btn-flat main-btn", style: "background-color: grey; width: 30%;" %>
