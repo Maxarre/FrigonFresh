@@ -10,6 +10,15 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
   margin: auto;
+  position: relative;
+
+  a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 // Smallest device
@@ -149,22 +158,24 @@
 }
 
 .name-brand {
-  width: 220px;
+  width: 240px;
   margin-top: 25px;
+  line-height: 30px;
 }
+
 .date {
   line-height: 30px;
   margin-top: 25px;
 }
 
 .price {
-  width: 160px;
+  width: 100px;
   width: 80px;
   margin-top: 25px;
 }
 
-.statut {
-  width: 140px;
+.status {
+  width: 100px;
   margin-top: 25px;
 }
 
@@ -225,5 +236,5 @@
   padding: 20px;
   height: 450px;
   margin-top: 20px;
-  width: 350;
+  width: 330px;
 }
