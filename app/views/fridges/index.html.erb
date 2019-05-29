@@ -49,7 +49,7 @@
       <p class = "index-fridge-brand"><%= fridge.brand %></p>
 
       <!-- <img id="frigo_s" src="<%= fridge.photo %>" alt="..."> -->
-      <%= cl_image_tag fridge.photo.url, height: 300, width: 300, crop: :fill %>
+      <%= cl_image_tag fridge.photo.url, id: "frigo_s", height: 300, width: 300, crop: :fill %>
       <div class="card-body">
         <h4 class="card-title card-title-index"><%= fridge.name %></h4>
         <p class="card-text"><%= fridge.address %></p>

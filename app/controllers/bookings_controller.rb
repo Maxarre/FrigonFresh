@@ -41,6 +41,28 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def accept
+    # chercher le user
+    # chercher le booking associe au statut pending
+    # le mettre en accepted
+    @booking = Booking.find(params[:id])
+    @booking.status = "accepted"
+    if @booking.save
+      redirect_to dashboard_path(current_user)
+    end
+  end
+
+  def decline
+    # chercher le user
+    # chercher le booking associe au statut pending
+    # le mettre en accepted
+    @booking = Booking.find(params[:id])
+    @booking.status = "declined"
+    if @booking.save
+      redirect_to dashboard_path(current_user)
+    end
+  end
+
   private
 
   def booking_params
