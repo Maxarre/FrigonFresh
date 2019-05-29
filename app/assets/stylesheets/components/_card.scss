@@ -172,7 +172,9 @@
 
 #show-resize-image {
   height: 300px;
-  object-fit: scale-down;
+  width: 200px;
+  object-fit: cover;
+  padding: 20px;
 
 }
 
