@@ -5,7 +5,7 @@
         <div class="col">
           <%= form_tag fridges_path, id: "search_form", method: :get do %>
           <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "name, address, brand" %>
-          <button class="button-looking" type="submit">Find a Fridge</button>
+          <button class="main-button bigger-button" type="submit">Find a Fridge</button>
           <% end %>
         </div>
       </div>
@@ -48,7 +48,7 @@
         <h4 class="card-title card-title-index"><%= fridge.name %></h4>
         <p class="card-text"><%= fridge.address %></p>
         <p class="card-text"><%= fridge.price %>€</p>
-        <%= link_to 'Details', fridge_path(fridge), class: "btn btn-primary" %>
+        <%= link_to 'Details', fridge_path(fridge), class: "main-button bigger-button" %>
       </div>
     </div>
   <% end %>
