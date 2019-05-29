@@ -24,24 +24,26 @@
 </div>
 
 <div class="d-flex justify-content-between" style="padding-top: 1 0px;">
-<div class="cards card-fridge">
-  <% @fridges.each do |fridge| %>
-    <div class="card" style="width: 18rem;">
-      <p class = "index-fridge-brand"><%= fridge.brand %></p>
-      <%= cl_image_tag fridge.photo.url, id: "frigo_s", height: 300, width: 300, crop: :fill %>
-      <div class="card-body">
-        <h4 class="card-title card-title-index"><%= fridge.name %></h4>
-        <p class="card-text"><%= fridge.address %></p>
-        <p class="card-text"><%= fridge.price %>€</p>
-        <%= link_to 'Details', fridge_path(fridge), class: "main-button bigger-button" %>
-      </div>
-    </div>
-  <% end %>
-</div>
-<div
-  id="map"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="cards card-fridge">
+    <% @fridges.each do |fridge| %>
+        <div class="card" style="width: 18rem;">
+          <p class = "index-fridge-brand"><%= fridge.brand %></p>
+          <%= cl_image_tag fridge.photo.url, id: "frigo_s", height: 300, width: 300, crop: :fill %>
+          <div class="card-body">
+            <h4 class="card-title card-title-index"><%= fridge.name %></h4>
+            <p class="card-text"><%= fridge.address %></p>
+            <p class="card-text"><%= fridge.price %>€</p>
+            <%= link_to '', fridge_path(fridge) %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 
-</div>
+
+
