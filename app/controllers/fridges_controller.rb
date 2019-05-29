@@ -16,8 +16,9 @@ class FridgesController < ApplicationController
       {
         lat: fridge.latitude,
         lng: fridge.longitude,
-        infoWindow: render_to_string(partial: "shared/infowindow", locals: { fridge: fridge })
-
+        infoWindow: render_to_string(partial: "shared/infowindow", 
+        locals: { fridge: fridge }),
+        image_url: helpers.asset_url("marker.png")
       }
     end
   end

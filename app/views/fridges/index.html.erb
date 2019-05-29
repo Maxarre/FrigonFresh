@@ -10,18 +10,37 @@
         </div>
       </div>
     </div>
+    
+
     <li class="element">
-    <i class="far fa-copyright"></i>
-    <span>BRAND</span>
-    <i class="fas fa-chevron-down"></i>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        BRAND <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <% Fridge.pluck(:brand).each do |brand| %>
+        <li><%= brand %></li>
+        <% end %>
+      </ul>
+    </div>
     </li>
     <li class="element">
-    <i class="fas fa-box"></i>
-    <span>CAPACITY</span>
-    <i class="fas fa-chevron-down"></i>
+      <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        CAPACITY <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <% Fridge.pluck(:capacity).each do |capacity| %>
+        <li><%= capacity %></li>
+        <% end %>
+      </ul>
+      <%#= select_tag "capacity", options_for_select(Fridge.pluck(:capacity)) %>
+      <%#= select_tag "brand", options_for_select(Fridge.pluck(:brand)) %>
+    </div>
     </li>
   </ul>
 </div>
+
 
 <div class="d-flex justify-content-between" style="padding-top: 1 0px;">
 <div class="cards card-fridge">
@@ -38,6 +57,7 @@
     </div>
   <% end %>
 </div>
+
 <div
   id="map"
   data-markers="<%= @markers.to_json %>"
