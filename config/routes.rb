@@ -15,12 +15,14 @@ Rails.application.routes.draw do
   # GET "/users/:id/edit" to: "users#edit"
   # PATCH "/users/:id" to: "users#update"
   # DELETE "users/:id" to: "users#destroy"
+  post "bookings/:id/accept", to: "bookings#accept", as: :accept
+  post "bookings/:id/decline", to: "bookings#decline", as: :decline
   devise_for :users
   root to: 'pages#home'
   get 'dashboard', to: 'users#dashboard'
   resources :bookings, only: [:edit, :update]
   resources :fridges, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:create, :destroy]
+    resources :bookings
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

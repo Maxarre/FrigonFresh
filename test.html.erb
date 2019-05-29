@@ -1,0 +1,76 @@
+<div class="d-flex dashboard-container">
+  <div class="user-booking-container m-5 to_the_left">
+    <div class="user-booking-header">
+      <h1><i class="far fa-folder-open"></i> My Bookings</h1>
+    </div>
+
+    <div class="user-booking-card">
+      <% @bookings.each do |booking| %>
+      <div class="card-dashboard">
+        <div class="row d-flex kill-margin">
+          <img src="<%= booking.fridge.photo %>" alt="" class="card-image-dashboard">
+          <div class="card-dashboard-element">
+            <span><%= booking.fridge.name %></span>
+          </div>
+          <div class="card-dashboard-element">
+            <span><%= booking.fridge.brand %></span>
+          </div>
+          <div class="card-dashboard-element">
+            <div class="booking-dates">
+                <p><%= booking.start_date %></p>
+                <p><%= booking.end_date %></p>
+            </div>
+          </div>
+          <div class="card-dashboard-element price">
+            <span><%= booking.fridge.price %> €</span
+            >
+          </div>
+          <div class="card-dashboard-element price">
+            <span><%= booking.status %></span>
+          </div>
+          <div class="card-dashboard-element icone">
+            <%= link_to fridge_booking_path(booking.fridge, booking), method: :delete, id: "danger", data: { confirm: "Are you sure?" } do %>
+            <i class ="fas fa-times"></i><% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <% if current_user.category == 'owner' || 'Owner' %>
+      <div class="user-booking-header"><h1>
+        <i class="far fa-folder-open"></i> My Reservations</h1>
+      </div>
+      <div class="user-booking-card">
+      <% fridge.bookings.each do |booking| %>
+        <div>
+        <% if booking.status == "pending"  %>
+          <%= link_to "Accept", accept_path(booking), method: :post, class: "btn btn-flat main-btn", style: "background-color: grey; width: 30%;" %>
+          <%= link_to "Decline", decline_path(booking), method: :post, class: "btn btn-flat main-btn", style: "background-color: grey; width: 30%;" %>
+        <% end %>
+        </div>
+      <% end %>
+      </div>
+
+  </div>
+</div>
+
+
+<!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<script>
+  const reservationStatusAccept = document.getElementById("reservation-status-accept");
+reservationStatusAccept.addEventListener("click", (event) => {
+  event.currentTarget.parentNode.innerHTML = "Accepted <i class='fas fa-check'></i>"
+});
+
+const reservationStatusDecline = document.getElementById("reservation-status-decline");
+reservationStatusDecline.addEventListener("click", (event) => {
+  event.currentTarget.parentNode.innerHTML = "Declined <i class='fas fa-times'></i>"
+});
+
+
+</script>
