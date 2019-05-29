@@ -10,9 +10,9 @@ class FridgesController < ApplicationController
     else
       @fridges = Fridge.all
     end
-    @maps = Fridge.where.not(latitude: nil, longitude: nil)
+    # @maps = Fridge.where.not(latitude: nil, longitude: nil)
 
-    @markers = @maps.map do |fridge|
+    @markers = @fridges.map do |fridge|
       {
         lat: fridge.latitude,
         lng: fridge.longitude,
