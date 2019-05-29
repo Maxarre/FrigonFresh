@@ -56,7 +56,7 @@
               </div>
               <div class="card-dashboard-element price"><span><%= reservation.fridge.price %> €</span
                 ></div>
-                <% if reservation.booking.status == 'Pending' %>
+                <% if reservation.status == 'pending' %> <!-- Change the reservation.booking -->
                   <div class="card-dashboard-element actions">
                     <ul class="list-inline">
                       <li id="reservation-status-accept">Accept</li>
